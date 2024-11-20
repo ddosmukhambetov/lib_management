@@ -1,0 +1,37 @@
+[
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "year": 1925,
+    "status": "в наличии",
+    "uuid": "31fc5460fe8c449dbdb104687d567a8b"
+  },
+  {
+    "title": "Ulysses",
+    "author": "James Joyce",
+    "year": 1922,
+    "status": "в наличии",
+    "uuid": "c4f4df5077164a33b95742e49bddb978"
+  },
+  {
+    "title": "In Search of Lost Time",
+    "author": "Marcel Proust",
+    "year": 1913,
+    "status": "в наличии",
+    "uuid": "7b836d7eaa4f41fb8d07800719f6da82"
+  },
+  {
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel García Márquez",
+    "year": 1967,
+    "status": "в наличии",
+    "uuid": "b368a0e4f9f549b181cef1b984b0fcdd"
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "author": "J. D. Salinger",
+    "year": 1951,
+    "status": "в наличии",
+    "uuid": "bf28e2dbd95d4412acce90f72a9e4364"
+  }
+]
