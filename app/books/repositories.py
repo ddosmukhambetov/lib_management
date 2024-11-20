@@ -2,8 +2,8 @@ from abc import ABC, abstractmethod
 from typing import List, Optional
 
 from app.books.models import Book
-from app.books.utils import load_books
-from app.books.utils import save_books
+from app.core.config import settings
+from app.utils import load_data, save_data
 
 
 class BaseBooksAbstractRepository(ABC):
@@ -49,7 +49,7 @@ class BooksRepository(BaseBooksAbstractRepository):
     Сохраняет данные о книгах в памяти и синхронизирует их с хранилищем.
     """
 
-    books = load_books()
+    books = load_data(settings.books.path_to_save_books, Book)
 
     @classmethod
     def add_book(cls, title: str, author: str, year: int, status: str) -> Book:
@@ -58,7 +58,7 @@ class BooksRepository(BaseBooksAbstractRepository):
         """
         book = Book(title=title, author=author, year=year, status=status)
         cls.books.append(book)
-        save_books(cls.books)
+        save_data(cls.books, settings.books.path_to_save_books)
         return book
 
     @classmethod
@@ -67,10 +67,9 @@ class BooksRepository(BaseBooksAbstractRepository):
         Удаляет книгу из репозитория по UUID. Возвращает удаленную книгу, если она найдена.
         """
         book = next((book for book in cls.books if str(book.uuid) == book_uuid), None)
-        print(book)
         if book:
             cls.books.remove(book)
-            save_books(cls.books)
+            save_data(cls.books, settings.books.path_to_save_books)
             return book
         return None
 
@@ -98,6 +97,6 @@ class BooksRepository(BaseBooksAbstractRepository):
         book = next((book for book in cls.books if str(book.uuid) == book_uuid), None)
         if book:
             book.status = new_status
-            save_books(cls.books)
+            save_data(cls.books, settings.books.path_to_save_books)
             return book
         return None
