@@ -22,7 +22,7 @@ class BooksService:
         for i, book in enumerate(self.repository.books, start=1):
             print(
                 f'{i}. '
-                f'ID: {book.uuid} | '
+                f'UUID: {book.uuid} | '
                 f'Название: {book.title} | '
                 f'Автор: {book.author} | '
                 f'Год: {book.year} | '
@@ -74,7 +74,7 @@ class BooksService:
         if removed_book:
             print(f'Книга {removed_book.title} удалена.')
         else:
-            print(f'Книга с ID {book_uuid} не найдена!')
+            print(f'Книга с UUID {book_uuid} не найдена!')
 
     def search_books_interactive(self) -> None:
         """
@@ -87,7 +87,7 @@ class BooksService:
             for i, book in enumerate(results, start=1):
                 print(
                     f'{i}. '
-                    f'ID: {book.uuid} | '
+                    f'UUID: {book.uuid} | '
                     f'Название: {book.title} | '
                     f'Автор: {book.author} | '
                     f'Год: {book.year} | '
